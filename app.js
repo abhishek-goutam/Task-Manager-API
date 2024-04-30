@@ -1,11 +1,10 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-
+var tasks = require('./task.json').tasks;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const tasks = [];
 let taskId = 0;
 
 const validateInput = (req, res, next) => {
